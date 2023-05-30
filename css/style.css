@@ -10036,7 +10036,9 @@ textarea {
   font-size: 13px;
   width: 100%;
   display: block;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: right;
+}
   .post-meta a {
     color: #000; }
   .post-meta .author-figure img {

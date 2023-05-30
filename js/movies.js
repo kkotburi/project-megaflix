@@ -40,7 +40,7 @@ function fetchMovie(page){
 
 //썸네일 클릭시 실행 될 함수 event로 DOM 정보를 가져와서 필요한 데이터를 빼서 사용
 function openView(id){
-	alert(id)
+	alert(`영화 ID : `+ id)
 }
 
 //윈도우 로드시 기본으로 한번 함수 실행함.
