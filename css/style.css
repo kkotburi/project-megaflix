@@ -10524,7 +10524,10 @@ textarea {
   gap: 20px 5%;
   flex-wrap: wrap;
 }
-.contain > div { width: 30%; }
+.contain > div {
+  width: 30%;
+  cursor: pointer;
+}
 
 .contain .post-entry-alt h2 a, .post-entry-alt .h2 a {
   display: block;
