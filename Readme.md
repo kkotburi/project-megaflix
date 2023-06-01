@@ -1,4 +1,4 @@
-[ Valina js를 활용한 영화 검색 사이트 ]
+[ Vanilla js를 활용한 영화 검색 사이트 - TMDB 오픈 API 활용]
 
 https://pj-vanilla-movie.vercel.app
 
