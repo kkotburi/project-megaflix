@@ -10527,6 +10527,15 @@ textarea {
 .contain > div {
   width: 30%;
   cursor: pointer;
+  box-shadow: 1px 1px 20px #ddd;
+  border-radius: 10px 10px;
+  transition: all 0.2s linear;
+}
+
+.contain > div:hover {
+  transform: scale(1.1);
+  background: #fff;
+  z-index: 9999;
 }
 
 .contain .post-entry-alt h2 a, .post-entry-alt .h2 a {
