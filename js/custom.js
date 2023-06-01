@@ -135,9 +135,9 @@
 	}
 	tinyslider();
 
-	var lightboxVideo = GLightbox({
-		selector: '.glightbox'
-	});
+	// var lightboxVideo = GLightbox({
+	// 	selector: '.glightbox'
+	// });
 
 
 })()
