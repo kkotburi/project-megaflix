@@ -1,3 +1,4 @@
+// 검색 필터
 function filter() {
 	let search = document.getElementById("search").value.toLowerCase();
 	let listInner = document.getElementsByClassName("list");
