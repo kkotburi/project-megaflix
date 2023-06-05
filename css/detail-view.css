@@ -1,1 +1,119 @@
 /* 영화 상세 정보 css 작성 */
+
+/* 리뷰 작성 부분 작업입니다 */
+.comment-write >h3 {
+    color: #0e0a20
+}
+
+.comment-write .comment_input {
+    border-top: 2px solid #0e0a20;
+    border-bottom: 2px solid #0e0a20;
+}
+
+.comment-write .info {
+    padding: 15px 15px 0px 20px;
+    display: flex;
+    align-items: center
+}
+
+.comment-write .comment_select {
+    padding: 0px 15px 0px 20px;
+    display: flex;
+    align-items: center
+}
+
+.comment-write .write {
+    padding: 15px;
+    border-bottom: 1px solid #0e0a20;
+    align-items: center;
+}
+
+.comment-write .info input {
+    border: none;
+    background-color: #EEEEEE;
+    padding: 5px;
+}
+
+.comment-write .info dl {
+    display: flex;
+    width: 50%;
+    vertical-align: middle;
+    margin: 0;
+    align-items: center;
+}
+
+.comment-write .info dt {
+    width: 150px;
+    padding: 15px 5px 15px;
+    font-size: 15px;
+}
+.comment-write .info input {
+    width: 150px;
+    padding: 5px 15px 5px 15px;
+    outline: none;
+    font-size: 15px;
+}
+
+
+.comment-write .comment_select dl {
+    display: flex;
+    width: 50%;
+    vertical-align: middle;
+    margin: 0;
+    align-items: center;
+}
+
+.comment-write .average p,
+.comment-write .part p {
+    width: 150px;
+    font-size: 15px;
+    font: bold;
+    margin: 0;
+}
+
+.comment-write .comment_select dt {
+    width: 150px;
+    padding: 15px 5px 15px;
+    font-size: 15px;
+}
+
+.comment-write .comment_select select {
+    width:150px;
+    padding:5px;
+    border:2px solid #EEEEEE;
+    outline: none;
+    font-size: 15px;
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance : none; */
+}
+
+.comment-write .write {
+    display: flex;
+    vertical-align: middle;
+    margin: 0;
+    align-items: center;
+
+}
+.comment-write .write_btn {
+    width: 150px;
+    height: 85px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: #0e0a20;
+    margin-left: 25px;
+}
+
+.comment-write .write textarea {
+    display: block;
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #EEEEEE;
+    font-size: 15px;
+}
+/* 리뷰 작성 부분 작업입니다 */
