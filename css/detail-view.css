@@ -1,1 +1,80 @@
 /* 영화 상세 정보 css 작성 */
+  .comment-list .comment { 
+    height: 80px;
+    margin: 20px 0px 20px 0px;
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  
+  }
+  
+  .comment-list .user {
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .comment-list .user-img {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+
+    background-image: url(https://www.studioapple.com/common/img/default_profile.png);
+    border-radius: 70%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .comment-list .user-id {
+    margin: auto 0px auto 0px;
+  }
+  
+  .comment-list .comment-box {
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 70%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    border-radius: 10px;
+    border-top-left-radius: 0;
+  }
+
+  .comment-list .comment-point {
+    width: 10%;
+    margin: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comment-list .comment-recommend {
+    width: 15%;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comment-list .comment-txt {
+    width: 80%;
+    height: 70%;
+    margin: 10px;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 10%;
+    padding-left: 5%;
+
+    border-left : thin solid #0e0a204b;
+  }
+  
