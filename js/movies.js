@@ -23,7 +23,7 @@ function fetchMovie(page) {
                                       base_url + movie.poster_path
                                     }" class="img-fluid" alt="" style="width:100%">
                                     <div class="caption">
-                                      <a href="#none">View details</a>
+                                      <a href="detail-view.html">View details</a>
                                     </div>
                                   </div>
                                 </div>
@@ -35,7 +35,6 @@ function fetchMovie(page) {
                                   <span class="d-inline-block mt-1">평점</span>
                                   <span>${movie.vote_average}</span>
                                 </div>
-                               </div>
                               </div>`;
         div.innerHTML = output;
         contain.appendChild(div);
