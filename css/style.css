@@ -76,6 +76,47 @@
   :root {
     scroll-behavior: smooth; } }
 
+
+/* index.html poster hover */
+.contain {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+
+.caption {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.caption a {
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.caption a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.contain:hover .caption {
+  opacity: 1;
+}
+/* index.html poster hover */
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

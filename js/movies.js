@@ -14,18 +14,25 @@ function fetchMovie(page) {
       movies.map(function (movie) {
         const div = document.createElement('div');
         div.classList.add('list');
-        const output = `<div class="post-entry-alt" onclick="openView(${movie.id})">
-									<a class="img-link"><img src="${base_url + movie.poster_path}" alt="Image" class="img-fluid"></a>
-									<div class="excerpt">
-										<h2><a class="tit-movie">${movie.title}</a></h2>
-									<div class="post-meta align-items-center text-left clearfix">
-										<span class="d-inline-block mt-1">평점</span>
-										<span>${movie.vote_average}</span>
-									</div>
-									<p cl<p><a href="#" class="read-more">개봉일: ${movie.release_date}</a></p>ass="ov-movie">${movie.overview}</p>
-									
-									</div>
-								</div>`;
+        const output = `    <div class="post-entry-alt" onclick="openView(${movie.id})">
+                                <a class="img-link"><img src="${
+                                  base_url + movie.poster_path
+                                }" alt="Image" class="img-fluid"></a>
+                                <div class="excerpt">
+                                    <h2><a class="tit-movie">${movie.title}</a></h2>
+                                    <div class="post-meta align-items-center text-left clearfix">
+                                        <span class="d-inline-block mt-1">평점</span>
+                                        <span>${movie.vote_average}</span>
+                                    </div>
+                                    <p><a href="#" class="read-more">개봉일: ${
+                                      movie.release_date
+                                    }</a></>ass="ov-movie">${movie.overview}</p>
+
+                                </div>
+                                <div class="caption">
+                                    <a href="#none">View details</a>
+                                </div>
+                            </div>`;
         div.innerHTML = output;
         contain.appendChild(div);
         div.setAttribute('data-id', movie.id);
