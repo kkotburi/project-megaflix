@@ -20,17 +20,14 @@ function fetchMovie(page) {
                                 }" alt="Image" class="img-fluid"></a>
                                 <div class="excerpt">
                                     <h2><a class="tit-movie">${movie.title}</a></h2>
-                                    <div class="post-meta align-items-center text-left clearfix">
+                                    <div class="post-meta align-items-center text-center clearfix">
                                         <span class="d-inline-block mt-1">평점</span>
                                         <span>${movie.vote_average}</span>
                                     </div>
-                                    <p><a href="#" class="read-more">개봉일: ${
-                                      movie.release_date
-                                    }</a></>ass="ov-movie">${movie.overview}</p>
-
+                                    
                                 </div>
                                 <div class="caption">
-                                    <a href="#none">View details</a>
+                                    <a href="detail-view.html">View details</a>
                                 </div>
                             </div>`;
         div.innerHTML = output;
@@ -42,9 +39,9 @@ function fetchMovie(page) {
 }
 
 //썸네일 클릭시 실행 될 함수 event로 DOM 정보를 가져와서 필요한 데이터를 빼서 사용
-function openView(id) {
-  alert(`영화 ID : ` + id);
-}
+// function openView(id) {
+//   alert(`영화 ID : ` + id);
+// }
 
 //윈도우 로드시 기본으로 한번 함수 실행함.
 window.addEventListener('onLoad', fetchMovie());

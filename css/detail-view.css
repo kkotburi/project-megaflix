@@ -1,10 +1,17 @@
 /* 영화 상세 정보 css 작성 */
 
 /* 리뷰 작성 부분 css */
-.comment-write >h3 {
-    color: #0e0a20
+.comment-write{
+  padding-top: 80px;
 }
-
+.comment-write >h3 {
+    color: #0e0a20;
+    
+}
+.comment-write >h3 >b {
+  color: #4D4C7D;
+  
+}
 .comment-write .comment_input {
     border-top: 2px solid #0e0a20;
     border-bottom: 2px solid #0e0a20;
@@ -148,7 +155,7 @@
 .detail .box-contents .vote-average {
   padding-top: 50px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #4D4C7D;
+  border-bottom: 1px solid #0e0a20;
 }
 .detail .box-contents .vote-average p{
   padding: 0;
@@ -166,7 +173,7 @@
 
 .detail .movie-video{
   position: relative;
-  border-top: 5px solid #4D4C7D;
+  border-top: 5px solid #0e0a20;
 }
 
 .detail .movie-video .video{
@@ -184,6 +191,7 @@
 /* 리뷰 리스트 css */
   .comment-list { 
   height: 600px;
+  padding-top: 30px;
   }
   .comment-list .comment { 
     height: 80px;
