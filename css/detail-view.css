@@ -117,3 +117,151 @@
     font-size: 15px;
 }
 /* 리뷰 작성 부분 작업입니다 */
+.detail .box{
+  height: 510px;
+}
+
+.detail .box-img{
+  position: relative;
+  width: 300px;
+}
+.detail .box-img .box-size {
+  width: 280px;
+  height: auto;
+}
+
+.detail .box-contents {
+  /* border: 1px solid black; */
+  position: relative;
+  left: 305px;
+  bottom: 407px;
+  width: 765px;
+  text-align:left;
+}
+
+.detail .box-contents strong {
+  color: #4D4C7D;
+  font-size: 30px;
+}
+
+
+.detail .box-contents .vote-average {
+  padding-top: 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #4D4C7D;
+}
+.detail .box-contents .vote-average p{
+  padding: 0;
+}
+
+.detail .box-contents .spec {
+  padding-top: 23px;
+  line-height:0.3em;
+  font-size: 13px;
+}
+
+.detail .box .box-contents .overview{
+  height: auto;
+}
+
+.detail .movie-video{
+  position: relative;
+  border-top: 5px solid #4D4C7D;
+}
+
+.detail .movie-video .video{
+  text-align: center;
+}
+
+.detail .movie-video h4{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight:bold;
+  color: #4D4C7D;
+}
+
+/* 리뷰 리스트 css */
+  .comment-list { 
+  height: 600px;
+  }
+  .comment-list .comment { 
+    height: 80px;
+    margin: 20px 0px 20px 0px;
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  
+  }
+  
+  .comment-list .user {
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .comment-list .user-img {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+
+    background-image: url(https://www.studioapple.com/common/img/default_profile.png);
+    border-radius: 70%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .comment-list .user-id {
+    margin: auto 0px auto 0px;
+  }
+  
+  .comment-list .comment-box {
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 70%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    border-radius: 10px;
+    border-top-left-radius: 0;
+  }
+
+  .comment-list .comment-point {
+    width: 10%;
+    margin: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comment-list .comment-recommend {
+    width: 15%;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comment-list .comment-txt {
+    width: 80%;
+    height: 70%;
+    margin: 10px;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 10%;
+    padding-left: 5%;
+
+    border-left : thin solid #0e0a204b;
+  }
+  
+
