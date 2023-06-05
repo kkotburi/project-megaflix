@@ -1,1 +1,64 @@
 /* 영화 상세 정보 css 작성 */
+.detail .box{
+  height: 510px;
+}
+
+.detail .box-img{
+  position: relative;
+  width: 300px;
+}
+.detail .box-img .box-size {
+  width: 280px;
+  height: auto;
+}
+
+.detail .box-contents {
+  /* border: 1px solid black; */
+  position: relative;
+  left: 305px;
+  bottom: 407px;
+  width: 765px;
+  text-align:left;
+}
+
+.detail .box-contents strong {
+  color: #4D4C7D;
+  font-size: 30px;
+}
+
+
+.detail .box-contents .vote-average {
+  padding-top: 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #4D4C7D;
+}
+.detail .box-contents .vote-average p{
+  padding: 0;
+}
+
+.detail .box-contents .spec {
+  padding-top: 23px;
+  line-height:0.3em;
+  font-size: 13px;
+}
+
+.detail .box .box-contents .overview{
+  height: auto;
+}
+
+.detail .movie-video{
+  position: relative;
+  border-top: 5px solid #4D4C7D;
+}
+
+.detail .movie-video .video{
+  text-align: center;
+}
+
+.detail .movie-video h4{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight:bold;
+  color: #4D4C7D;
+}
