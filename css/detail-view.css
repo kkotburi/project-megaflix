@@ -1,6 +1,6 @@
 /* 영화 상세 정보 css 작성 */
 
-/* 리뷰 작성 부분 작업입니다 */
+/* 리뷰 작성 부분 css */
 .comment-write >h3 {
     color: #0e0a20
 }
@@ -116,7 +116,7 @@
     background-color: #EEEEEE;
     font-size: 15px;
 }
-/* 리뷰 작성 부분 작업입니다 */
+/* 영화 상세 내용 css*/
 .detail .box{
   height: 510px;
 }
