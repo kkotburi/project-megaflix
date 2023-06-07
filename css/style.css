@@ -12120,10 +12120,12 @@ fieldset:disabled .btn {
 }
 
 .site-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #0e0a20;
   padding: 10px 0;
+  z-index: 11;
 }
 
 .site-nav h1,
@@ -13942,7 +13944,7 @@ textarea {
 .contain > div:hover {
   transform: scale(1.1);
   background: #fff;
-  z-index: 9999;
+  z-index: 0;
 }
 
 .contain .post-entry-alt h2 a,
