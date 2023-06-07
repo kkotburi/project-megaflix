@@ -4,6 +4,7 @@ import { movieId } from "./detail-info.js";
 export const detailVideo = () => {
   const key = "4e657bab9a1d4d7b73eb2631af49f6da";
   const movieViedosElement = document.getElementById("movieVideos");
+  const videos = document.getElementById("videos");
 
   // console.log(urlParams);
   // console.log(movieId);
@@ -25,32 +26,36 @@ export const detailVideo = () => {
         // }
 
         if (res.results.length > 0) {
-          //type Trailer 하나 가져오기
+          // main Trailer 하나 가져오기
           let keyArr = res.results.filter((value) => value.type === "Trailer");
-          // console.log(keyArr);
           const youtubeId = keyArr[0].key;
-          //나머지 Trailer 보여지기
-          const restKeyArr = keyArr.splice(1);
-          for (let i in restKeyArr) {
-            let youtubeRestId = restKeyArr[i].key;
-            // console.log(youtubeRestId);
-            output = `
+          output = `
                       <h4>Main trailer</h4>
                             <div class="video">
                               <iframe width="1000" height="580" src="https://www.youtube.com/embed/${youtubeId}?autoplay=1"></iframe>
-                            </div>
-                            <div class="rest-video">
-                            <iframe width="260" height="142" src="https://www.youtube.com/embed/${youtubeRestId}?autoplay=1"></iframe>
-                            </div>
-                            `;
-          }
+                            </div>`;
+          movieViedosElement.innerHTML = output;
+
+          //나머지 Trailer 보여지기
+          const restKeyArr = keyArr.splice(1);
+          restKeyArr.map(function (restTrailer) {
+            const div = document.createElement("div");
+            div.classList.add("rest-video");
+            const restOutput = `
+                                  <iframe src="https://www.youtube.com/embed/${restTrailer.key}?autoplay=1"></iframe>
+                                `;
+            console.log(restOutput);
+            div.innerHTML = restOutput;
+            videos.appendChild(div);
+          });
+
+          // console.log(restKeyArr);
         } else {
           output = `<h4>Main trailer</h4>
           <div class="video">
             <h3>검색 결과가 없습니다.</h3>
           </div>`;
         }
-        movieViedosElement.innerHTML = output;
         // console.log(output);
       });
   }
