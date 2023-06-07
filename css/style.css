@@ -14024,3 +14024,7 @@ textarea {
 }
 
 /* index.html poster hover */
+
+.icon-github:before {
+  font-size: 30px;
+}
