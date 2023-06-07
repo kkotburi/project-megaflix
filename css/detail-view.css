@@ -183,6 +183,10 @@
   color: #4d4c7d;
 }
 
+.detail .movie-video .rest-video {
+  padding-top: 20px;
+}
+
 /* 리뷰 리스트 css */
 .comment-list {
   height: 600px;

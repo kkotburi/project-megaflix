@@ -1,4 +1,4 @@
-import { urlParams, movieId } from "./detail-info.js";
+import { movieId } from "./detail-info.js";
 
 //상세 정보 누른 영화 id 값 가져오기
 export const detailVideo = () => {
@@ -27,19 +27,23 @@ export const detailVideo = () => {
         if (res.results.length > 0) {
           //type Trailer 하나 가져오기
           let keyArr = res.results.filter((value) => value.type === "Trailer");
-          // console.log(keyArr[0].key);
+          // console.log(keyArr);
           const youtubeId = keyArr[0].key;
           //나머지 Trailer 보여지기
-          const youtubeRestId = keyArr.splice(1);
-          console.log(youtubeRestId);
-          output = `
-                    <h4>Main trailer</h4>
-                          <div class="video">
-                            <iframe width="1000" height="580" src="https://www.youtube.com/embed/${youtubeId}?autoplay=1"></iframe>
-                          </div>
-                          <div class="rest-video">
-                          <iframe width="500" height="400" src="https://www.youtube.com/embed/${youtubeRestId}?autoplay=1"></iframe>
-                          </div>`;
+          const restKeyArr = keyArr.splice(1);
+          for (let i in restKeyArr) {
+            let youtubeRestId = restKeyArr[i].key;
+            // console.log(youtubeRestId);
+            output = `
+                      <h4>Main trailer</h4>
+                            <div class="video">
+                              <iframe width="1000" height="580" src="https://www.youtube.com/embed/${youtubeId}?autoplay=1"></iframe>
+                            </div>
+                            <div class="rest-video">
+                            <iframe width="260" height="142" src="https://www.youtube.com/embed/${youtubeRestId}?autoplay=1"></iframe>
+                            </div>
+                            `;
+          }
         } else {
           output = `<h4>Main trailer</h4>
           <div class="video">
