@@ -1,10 +1,9 @@
 export const detailInfo = () => {
   const key = "4e657bab9a1d4d7b73eb2631af49f6da";
   const movieDetailsElement = document.getElementById("movieDetails");
-
   const urlParams = new URLSearchParams(window.location.search);
-  console.log(window.location.search, urlParams);
   const movieId = urlParams.get("id");
+
   async function fetchMovieDetails(movieId) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&append_to_response=credits`;
     const res = await fetch(url);
@@ -12,12 +11,41 @@ export const detailInfo = () => {
     return data;
   }
 
-  async function showMovieDetails(movieId) {
-    const movieDetails = await fetchMovieDetails(movieId);
+  // 실시간 날짜 추가
+  function displayDateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const weekday = ["일", "월", "화", "수", "목", "금", "토"];
+    const currentWeekday = weekday[now.getDay()];
+    const dateTimeString = `${year}년 ${month}월 ${day}일 ${currentWeekday}요일 ${getAmPm(hours)} ${padZero(hours)}:${padZero(minutes)}`;
+    const datetimeElement = document.getElementById("datetime");
+    datetimeElement.textContent = dateTimeString;
+    setTimeout(displayDateTime, 1000);
+  }
+
+  function getAmPm(hours) {
+    return hours >= 12 ? "오후" : "오전";
+  }
+
+  function padZero(number) {
+    return number < 10 ? "0" + number : number;
+  }
+
+  function showMovieDetails(movieDetails) {
+    // 감독 불러오기
     const directors = movieDetails.credits.crew.filter(
       (person) => person.job === "Director"
     );
     const directorNames = directors.map((director) => director.name).join(", ");
+
+    // 평점 소수점 첫째자리까지
+    const voteAverage = movieDetails.vote_average.toFixed(1);
+
     const movieHTML = `
       <div class="box">
         <div class="box-img"><img src="https://image.tmdb.org/t/p/w500${movieDetails.poster_path}" alt="${movieDetails.title} Poster" class="box-size"></div>
@@ -26,20 +54,59 @@ export const detailInfo = () => {
             <strong>${movieDetails.title}</strong>
           </div>
           <div class="vote-average">
-            <p>Score&nbsp;<span>${movieDetails.vote_average}</span></p>
+            <p><span class="tit-spec">Score</span><span><i class="rate">⭐</i>${voteAverage}</span></p>
           </div>
           <div class="spec">
-            <p>Director:&nbsp;<span>${directorNames}</span></p>
-            <p>Genre:&nbsp;<span>${movieDetails.genres[0].name}</span></p>
-            <p>Release Date:&nbsp;<span>${movieDetails.release_date}</span></p>
+            <p><span class="tit-spec">Director:</span><span>${directorNames}</span></p>
+            <p><span class="tit-spec">Genre:</span><span>${movieDetails.genres[0].name}</span></p>
+            <p><span class="tit-spec">Release Date:</span><span>${movieDetails.release_date}</span></p>
           </div>
-          <div class="overview">${movieDetails.overview}</div>
+          <div class="overview">${movieDetails.overview}</div>      
+        </div>
+        <div class="detail-banner">
+            <p class="tit">영화 실시간 순위</p>
+            <p class="desc">현재 기준 사용자가 가장 많이 시청하는 순위입니다.</p>
+            <p id="datetime" class="realtime">2023년 6월 7일 수요일 오후 3:00</p>
+            <ul id="movie-list" class="rank"></ul>
         </div>
       </div>
     `;
     movieDetailsElement.innerHTML += movieHTML;
   }
 
-  // 각각의 영화에 대한 상세 정보를 호출하여 표시
-  showMovieDetails(movieId);
+  fetchMovieDetails(movieId)
+    .then(function (movieDetails) {
+      showMovieDetails(movieDetails);
+
+      // 실시간 시간
+      displayDateTime();
+
+      // 영화 목록 가져오기
+      const url = "https://api.themoviedb.org/3/movie/popular?api_key=4e657bab9a1d4d7b73eb2631af49f6da";
+      const movieList = document.getElementById("movie-list");
+
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          const movies = data.results.slice(0, 10);
+          movies.forEach(function (movie, index) {
+            const listItem = document.createElement("li");
+            const rank = document.createElement("b");
+            rank.textContent = index + 1;
+            const title = document.createElement("span");
+            title.textContent = movie.title;
+            listItem.appendChild(rank);
+            listItem.appendChild(title);
+            movieList.appendChild(listItem);
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };

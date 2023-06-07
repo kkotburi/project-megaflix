@@ -121,11 +121,12 @@
 }
 /* 영화 상세 내용 css*/
 .detail .box {
+  position: relative;
   height: 510px;
 }
 
 .detail .box-img {
-  position: relative;
+  position: absolute;
   width: 300px;
 }
 .detail .box-img .box-size {
@@ -135,10 +136,9 @@
 
 .detail .box-contents {
   /* border: 1px solid black; */
-  position: relative;
+  position: absolute;
   left: 305px;
-  bottom: 407px;
-  width: 765px;
+  width: 700px;
   text-align: left;
 }
 
@@ -156,15 +156,88 @@
   padding: 0;
 }
 
+.detail .box-contents .vote-average .tit-spec {
+  display: inline-block;
+  width: 100px;
+  font-weight: 600;
+}
+
+.detail .box-contents .vote-average .rate {
+  margin-right: 5px;
+  font-style: normal;
+}
+
+
 .detail .box-contents .spec {
   padding-top: 23px;
   line-height: 0.3em;
   font-size: 13px;
 }
 
+.detail .box-contents .spec .tit-spec {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
 .detail .box .box-contents .overview {
   height: auto;
 }
+
+/* 우측 영역 추가 */
+.detail-banner {
+  position: absolute;
+  right: 0;
+  padding: 20px;
+  width: 250px;
+  border: 2px solid #4d4c7d;
+  border-radius: 10px;
+}
+
+.detail-banner .tit {
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4d4c7d;
+}
+
+.detail-banner .desc {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.detail-banner .realtime {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4d4c7d;
+}
+
+.detail-banner .rank {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.detail-banner .rank li {
+  margin-bottom: 4px;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.detail-banner .rank li > b {
+  display: inline-block;
+  width: 25px;
+  font-weight: 600;
+  color: #121212;
+}
+
+.detail-banner .rank li > span {
+  font-size: 13px;
+}
+
 
 .detail .movie-video {
   position: relative;
