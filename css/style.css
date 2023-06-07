@@ -13930,7 +13930,7 @@ textarea {
 }
 .contain {
   display: flex;
-  gap: 20px 5%;
+  gap: 30px 5%;
   flex-wrap: wrap;
 }
 .contain > div {
@@ -13942,7 +13942,7 @@ textarea {
 }
 
 .contain > div:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: #fff;
   z-index: 0;
 }
