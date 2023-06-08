@@ -33,7 +33,7 @@ export const fetchMovie = (page) => {
                                   }</a></h2>
                                   <div class="post-meta align-items-center text-center clearfix">
                                   <span class="d-inline-block mt-1">평점</span>
-                                  <span>${movie.vote_average}</span>
+                                  <span>⭐ ${movie.vote_average}</span>
                                 </div>
                               </div>`;
         div.innerHTML = output;
