@@ -2216,6 +2216,10 @@ progress {
   -webkit-overflow-scrolling: touch;
 }
 
+.vertical-middle {
+  vertical-align: middle;
+}
+
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     overflow-x: auto;
@@ -12116,10 +12120,12 @@ fieldset:disabled .btn {
 }
 
 .site-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #0e0a20;
   padding: 10px 0;
+  z-index: 11;
 }
 
 .site-nav h1,
@@ -13877,15 +13883,20 @@ textarea {
   margin-bottom: 10px;
 }
 .site-footer .social li {
-  display: inline-block;
+  margin-bottom: 4px;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 35px;
 }
 .site-footer .social li a {
+  float: right;
   display: inline-block;
   width: 40px;
   height: 40px;
   position: relative;
   background: #fff;
   border-radius: 4px;
+  vertical-align: middle;
   color: #0e0a20;
 }
 .site-footer .social li a:before {
@@ -13919,7 +13930,7 @@ textarea {
 }
 .contain {
   display: flex;
-  gap: 20px 5%;
+  gap: 30px 5%;
   flex-wrap: wrap;
 }
 .contain > div {
@@ -13931,9 +13942,9 @@ textarea {
 }
 
 .contain > div:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: #fff;
-  z-index: 9999;
+  z-index: 0;
 }
 
 .contain .post-entry-alt h2 a,
@@ -14013,3 +14024,9 @@ textarea {
 }
 
 /* index.html poster hover */
+
+
+.icon-github:before {
+  font-size: 30px;
+}
+
