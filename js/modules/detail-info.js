@@ -19,7 +19,7 @@ export const detailInfo = () => {
     );
     const directorNames = directors.map((director) => director.name).join(", ");
     const movieHTML = `
-      <div class="box">
+      <div class="moviebox" id="${movieDetails.id}">
         <div class="box-img"><img src="https://image.tmdb.org/t/p/w500${movieDetails.poster_path}" alt="${movieDetails.title} Poster" class="box-size"></div>
         <div class="box-contents">
           <div class="title">
