@@ -1,5 +1,5 @@
-import { filter } from "./modules/search.js";
-import { fetchMovie } from "./modules/movies.js";
+import { filter } from "./search.js";
+import { fetchMovie } from "./movies.js";
 
 // 전역변수 두는 곳
 const searchElement = document.getElementById("search");

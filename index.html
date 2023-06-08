@@ -7,253 +7,273 @@
 <!doctype html>
 <html lang="ko">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Untree.co">
-	<link rel="icon" href="/images/titlemovie.png">
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="css/style.css">
-	<title>MEGAFLIX</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Untree.co">
+        <link rel="icon" href="/images/titlemovie.png">
+        <meta name="description" content=""/>
+        <meta name="keywords" content="bootstrap, bootstrap5"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>MEGAFLIX</title>
+    </head>
 
-<body>
+    <body>
 
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close">
+                    <span class="icofont-close js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
 
-	<nav class="site-nav">
-		<div class="container">
-			<div class="menu-bg-wrap">
-				<div class="site-navigation">
-					<div class="row g-0 align-items-center">
-						<div class="col-2">
-							<a href="index.html" class="logo m-0 float-start">MEGAFLIX<span
-									class="text-primary">.</span></a>
-						</div>
-						<div class="col-7 text-center">
-<!--							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">-->
-<!--								<li class="active"><a href="index.html">홈</a></li>-->
-<!--								<li><a href="detail-view.html">영화정보</a></li>-->
-<!--								<li><a href="category.html">리뷰</a></li>-->
-<!--								<li><a href="category.html">레이디퍼스트</a></li>-->
-<!--							</ul>-->
-						</div>
-						<div class="col-3 text-end">
-							<a href="#"
-								class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-								<span></span>
-							</a>
-							<form action="#" class="search-form d-none d-lg-inline-block" onsubmit="return false">
-								<input type="text" id="search" class="form-control" placeholder="검색어를 입력하세요." autofocus>
-								<span class="bi-search"></span>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+        <nav class="site-nav">
+            <div class="container">
+                <div class="menu-bg-wrap">
+                    <div class="site-navigation">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-2">
+                                <a href="index.html" class="logo m-0 float-start">MEGAFLIX<span class="text-primary">.</span>
+                                </a>
+                            </div>
+                            <div class="col-7 text-center"><!--							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">-->
+                                <!--								<li class="active"><a href="index.html">홈</a></li>-->
+                                <!--								<li><a href="detail-view.html">영화정보</a></li>-->
+                                <!--								<li><a href="category.html">리뷰</a></li>-->
+                                <!--								<li><a href="category.html">레이디퍼스트</a></li>-->
+                                <!--							</ul>-->
+                            </div>
+                            <div class="col-3 text-end">
+                                <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                                    <span></span>
+                                </a>
+                                <form action="#" class="search-form d-none d-lg-inline-block" onsubmit="return false">
+                                    <input type="text" id="search" class="form-control" placeholder="검색어를 입력하세요." autofocus>
+                                    <span class="bi-search"></span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-	<section class="section">
-		<div class="container">
-			<div class="row mb-4">
-				<div class="col-sm-6">
-					<h2 class="posts-entry-title tit-rate">박스 오피스 순위</h2>
-				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
-			</div>
-			<div class="contain"></div>
-			<div class="mt-3 buttonWrapper text-center"><button class="btn btn-primary">더 보기</button></div>
-			<div id="overlay">
-				<div class="youtube"></div>
-				<!--				<img class="close" src="img/close_white.png">-->
-			</div>
-			<div class="row"></div>
-		</div>
-	</section>
+        <section class="section">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h2 class="posts-entry-title tit-rate">박스 오피스 순위</h2>
+                    </div>
+                    <div class="col-sm-6 text-sm-end">
+                        <a href="category.html" class="read-more">View All</a>
+                    </div>
+                </div>
+                <div class="contain"></div>
+                <div class="mt-3 buttonWrapper text-center">
+                    <button class="btn btn-primary">더 보기</button>
+                </div>
+                <div id="overlay">
+                    <div class="youtube"></div>
+                    <!--				<img class="close" src="img/close_white.png">-->
+                </div>
+                <div class="row"></div>
+            </div>
+        </section>
 
-	<div class="section bg-light">
-		<div class="container">
-			<div class="row mb-4">
-				<div class="col-sm-6">
-					<h2 class="posts-entry-title">Travel</h2>
-				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
-			</div>
-			<div class="row align-items-stretch retro-layout-alt">
-				<div class="col-md-5 order-md-2">
-					<a href="single.html" class="hentry img-1 h-100 gradient">
-						<div class="featured-img"
-							style="background-image: url('https://www.megabox.co.kr/SharedImg/editorImg/2023/05/18/FEOQIZLXyFl4SZKFP1GQ1wfHOxTWvyZf.jpg');">
-						</div>
-						<div class="text">
-							<span>February 12, 2023</span>
-							<h2>Meta unveils fees on metaverse sales</h2>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-7">
-					<a href="single.html" class="hentry img-2 v-height mb30 gradient">
-						<div class="featured-img"
-							style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/03/14/tGlm2fXaKlYTeX55sC3h4VFQUwHPXdXV.jpg');">
-						</div>
-						<div class="text text-sm">
-							<span>February 12, 2023</span>
-							<h2>AI can now kill those annoying cookie pop-ups</h2>
-						</div>
-					</a>
-					<div class="two-col d-block d-md-flex justify-content-between">
-						<a href="single.html" class="hentry v-height img-2 gradient">
-							<div class="featured-img"
-								style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/05/24/qglyCqr8lWA93k5vhAUlNqTdnXxLFaG4.jpg');">
-							</div>
-							<div class="text text-sm">
-								<span>February 12, 2023</span>
-								<h2>Don’t assume your user data in the cloud is safe</h2>
-							</div>
-						</a>
-						<a href="single.html" class="hentry v-height img-2 ms-auto float-end gradient">
-							<div class="featured-img"
-								style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/05/22/0bp7nOfi7dGtiZAUqbeUmll5TSNTM6AC.jpg');">
-							</div>
-							<div class="text text-sm">
-								<span>February 12, 2023</span>
-								<h2>Startup vs corporate: What job suits you best?</h2>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="section bg-light">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h2 class="posts-entry-title">Travel</h2>
+                    </div>
+                    <div class="col-sm-6 text-sm-end">
+                        <a href="category.html" class="read-more">View All</a>
+                    </div>
+                </div>
+                <div class="row align-items-stretch retro-layout-alt">
+                    <div class="col-md-5 order-md-2">
+                        <a href="single.html" class="hentry img-1 h-100 gradient">
+                            <div class="featured-img" style="background-image: url('https://www.megabox.co.kr/SharedImg/editorImg/2023/05/18/FEOQIZLXyFl4SZKFP1GQ1wfHOxTWvyZf.jpg');"></div>
+                            <div class="text">
+                                <span>February 12, 2023</span>
+                                <h2>Meta unveils fees on metaverse sales</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-7">
+                        <a href="single.html" class="hentry img-2 v-height mb30 gradient">
+                            <div class="featured-img" style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/03/14/tGlm2fXaKlYTeX55sC3h4VFQUwHPXdXV.jpg');"></div>
+                            <div class="text text-sm">
+                                <span>February 12, 2023</span>
+                                <h2>AI can now kill those annoying cookie pop-ups</h2>
+                            </div>
+                        </a>
+                        <div class="two-col d-block d-md-flex justify-content-between">
+                            <a href="single.html" class="hentry v-height img-2 gradient">
+                                <div class="featured-img" style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/05/24/qglyCqr8lWA93k5vhAUlNqTdnXxLFaG4.jpg');"></div>
+                                <div class="text text-sm">
+                                    <span>February 12, 2023</span>
+                                    <h2>Don’t assume your user data in the cloud is safe</h2>
+                                </div>
+                            </a>
+                            <a href="single.html" class="hentry v-height img-2 ms-auto float-end gradient">
+                                <div class="featured-img" style="background-image: url('https://img.megabox.co.kr/SharedImg/event/2023/05/22/0bp7nOfi7dGtiZAUqbeUmll5TSNTM6AC.jpg');"></div>
+                                <div class="text text-sm">
+                                    <span>February 12, 2023</span>
+                                    <h2>Startup vs corporate: What job suits you best?</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<footer class="site-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3 class="mb-4">About</h3>
-						<p>Team.레이디퍼스트는 여성 5명으로 이루어진 프론트엔드 개발 팀입니다.</p>
-					</div> <!-- /.widget -->
-					<div class="widget">
-						<h3>Social</h3>
-						<ul class="list-unstyled social">
-							<li>Songju.Jeong @songjuu<a href="https://github.com/songjuu" target="_blank"><span class="icon-github"></span></a></li>
-							<li>Hyeyeong.Lee @kkotburi<a href="https://github.com/kkotburi" target="_blank"><span class="icon-github"></span></a></li>
-							<li>Yunbeen.Na @skdbsqls<a href="https://github.com/skdbsqls" target="_blank"><span class="icon-github"></span></a></li>
-							<li>Seoyoung.Hong @ddoyongida<a href="https://github.com/ddoyongida" target="_blank"><span class="icon-github"></span></a></li>
-							<li>Hyungjung.Son @hyungjungson<a href="https://github.com/hyungjungson" target="_blank"><span class="icon-github"></span></a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4 ps-lg-5">
-					<div class="widget">
-						<h3 class="mb-4">Company</h3>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Vision</a></li>
-							<li><a href="#">Mission</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Business</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Creative</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3 class="mb-4">Recent Post Entry</h3>
-						<div class="post-entry-footer">
-							<ul>
-								<li>
-									<a href="">
-										<img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2023 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2023 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2023 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-			</div> <!-- /.row -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="widget">
+                            <h3 class="mb-4">About</h3>
+                            <p>Team.레이디퍼스트는 여성 5명으로 이루어진 프론트엔드 개발 팀입니다.</p>
+                        </div>
+                        <!-- /.widget -->
+                        <div class="widget">
+                            <h3>Social</h3>
+                            <ul class="list-unstyled social">
+                                <li>Songju.Jeong @songjuu<a href="https://github.com/songjuu" target="_blank">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                                <li>Hyeyeong.Lee @kkotburi<a href="https://github.com/kkotburi" target="_blank">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                                <li>Yunbeen.Na @skdbsqls<a href="https://github.com/skdbsqls" target="_blank">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                                <li>Seoyoung.Hong @ddoyongida<a href="https://github.com/ddoyongida" target="_blank">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                                <li>Hyungjung.Son @hyungjungson<a href="https://github.com/hyungjungson" target="_blank">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.widget -->
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <div class="col-lg-4 ps-lg-5">
+                        <div class="widget">
+                            <h3 class="mb-4">Company</h3>
+                            <ul class="list-unstyled float-start links">
+                                <li>
+                                    <a href="#">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Vision</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mission</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled float-start links">
+                                <li>
+                                    <a href="#">Partners</a>
+                                </li>
+                                <li>
+                                    <a href="#">Business</a>
+                                </li>
+                                <li>
+                                    <a href="#">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#">Creative</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.widget -->
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="widget">
+                            <h3 class="mb-4">Recent Post Entry</h3>
+                            <div class="post-entry-footer">
+                                <ul>
+                                    <li><a href=""><img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded"><div class="text"><h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4><div class="post-meta"><span class="mr-2">March 15, 2023</span></div></div></a></li>
+                                    <li><a href=""><img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded"><div class="text"><h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4><div class="post-meta"><span class="mr-2">March 15, 2023</span></div></div></a></li>
+                                    <li><a href=""><img src="images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded"><div class="text"><h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4><div class="post-meta"><span class="mr-2">March 15, 2023</span></div></div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.widget -->
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <!-- /.row -->
 
-			<div class="row mt-5">
-				<div class="col-12 text-center">
-					<!--
-					**==========
-					NOTE:
-					Please don't remove this copyright link unless you buy the license here https://untree.co/license/
-					**==========
-				  -->
-					<p>Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
-						Designed by <a href="#" class="vertical-middle">레이디퍼스트</a>
-					</p>
-				</div>
-			</div>
-		</div> <!-- /.container -->
-	</footer> <!-- /.site-footer -->
+                <div class="row mt-5">
+                    <div
+                        class="col-12 text-center">
+                        <!--
+                                                                                                                                                                **==========
+                                                                                                                                                                NOTE:
+                                                                                                                                                                Please don't remove this copyright link unless you buy the license here https://untree.co/license/
+                                                                                                                                                                **==========
+                                                                                                                                                              -->
+                        <p>Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>. All Rights Reserved. &mdash;
+                                                                                                                                                                                            Designed by
+                            <a href="#" class="vertical-middle">레이디퍼스트</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </footer>
+        <!-- /.site-footer -->
 
-	<!-- Preloader -->
-	<div id="overlayer"></div>
-	<div class="loader">
-		<div class="spinner-border text-primary" role="status">
-			<span class="visually-hidden">Loading...</span>
-		</div>
-	</div>
+        <!-- Preloader -->
+        <div id="overlayer"></div>
+        <div class="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
 
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/custom.js"></script>
-	<!-- js: movie -->
-	<script type="module" src="js/main.js"></script><!-- api -->
-</body>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/custom.js"></script>
+        <!-- js: movie -->
+        <script type="module" src="js/modules/main.js"></script>
+        <!-- api -->
+    </body>
 
 </html>
