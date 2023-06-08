@@ -4,6 +4,4 @@ import { saveData, printData, button } from "./modules/detail-review.js";
 
 detailInfo();
 detailVideo();
-saveData();
 printData();
-button();

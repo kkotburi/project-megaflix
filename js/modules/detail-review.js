@@ -7,6 +7,7 @@ export const saveData = () => {
   const part = document.getElementById("part").value;
   const comment = document.getElementById("comment").value;
   const movieId = document.querySelector(".moviebox").id;
+  console.log(typeof movieId, movieId);
 
   // 입력값 객체에 담기
   let uuid = self.crypto.randomUUID();
@@ -149,3 +150,4 @@ button.addEventListener("click", function (event) {
   document.getElementById("part").value = "배우";
   document.getElementById("comment").value = "";
 });
+printData();
