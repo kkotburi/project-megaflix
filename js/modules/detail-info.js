@@ -1,13 +1,11 @@
+export const urlParams = new URLSearchParams(window.location.search);
+export const movieId = urlParams.get("id");
+
 export const detailInfo = () => {
   // api key
   const key = "4e657bab9a1d4d7b73eb2631af49f6da";
   const movieDetailsElement = document.getElementById("movieDetails");
 
-  // url에서 쿼리 id 가져오기 : ?id=영화id
-  const urlParams = new URLSearchParams(window.location.search);
-  const movieId = urlParams.get("id");
-
-  // 영화 상세 정보 가져오기 : 기존 fetch에서 async로 변경
   async function fetchMovieDetails(movieId) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&append_to_response=credits`;
     const res = await fetch(url);
@@ -26,7 +24,9 @@ export const detailInfo = () => {
     const seconds = now.getSeconds();
     const weekday = ["일", "월", "화", "수", "목", "금", "토"];
     const currentWeekday = weekday[now.getDay()];
-    const dateTimeString = `${year}년 ${month}월 ${day}일 ${currentWeekday}요일 ${getAmPm(hours)} ${padZero(hours)}:${padZero(minutes)}`;
+    const dateTimeString = `${year}년 ${month}월 ${day}일 ${currentWeekday}요일 ${getAmPm(
+      hours
+    )} ${padZero(hours)}:${padZero(minutes)}`;
     const datetimeElement = document.getElementById("datetime");
     datetimeElement.textContent = dateTimeString;
     setTimeout(displayDateTime, 1000);
@@ -91,7 +91,8 @@ export const detailInfo = () => {
       displayDateTime();
 
       // 인기 영화 목록 가져오기
-      const url = "https://api.themoviedb.org/3/movie/popular?api_key=4e657bab9a1d4d7b73eb2631af49f6da";
+      const url =
+        "https://api.themoviedb.org/3/movie/popular?api_key=4e657bab9a1d4d7b73eb2631af49f6da";
       const movieList = document.getElementById("movie-list");
 
       fetch(url)
