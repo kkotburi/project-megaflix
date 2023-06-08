@@ -149,5 +149,3 @@ button.addEventListener("click", function (event) {
   document.getElementById("part").value = "배우";
   document.getElementById("comment").value = "";
 });
-
-printData();

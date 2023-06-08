@@ -113,7 +113,7 @@
                             <dl>
                                 <dt>평점</dt>
                                 <dd>
-                                    <select id="average">
+                                    <select name="average" id="average" title="average">
                                         <option value="⭐️">⭐️</option>
                                         <option value="⭐️⭐️">⭐️⭐️</option>
                                         <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
@@ -125,7 +125,7 @@
                             <dl>
                                 <dt>추천 부분</dt>
                                 <dd>
-                                    <select id="part">
+                                    <select name="part" id="part" title="part">
                                         <option value="배우">배우</option>
                                         <option value="연출">연출</option>
                                         <option value="스토리">스토리</option>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <!-- 리뷰 리스트 부분 -->
-                <div class="comment-list"></div>
+                <ul class="comment-list"></ul>
             </div>
         </section>
 
@@ -206,23 +206,23 @@
                         <div class="widget">
                             <h3>Social</h3>
                             <ul class="list-unstyled social">
-                                <li>Songju.Jeong @songjuu<a href="https://github.com/songjuu" target="_blank">
+                                <li>Songju.Jeong @songjuu<a href="https://github.com/songjuu" rel="noopener noreferrer" target="_blank" aria-label="songjuu">
                                         <span class="icon-github"></span>
                                     </a>
                                 </li>
-                                <li>Hyeyeong.Lee @kkotburi<a href="https://github.com/kkotburi" target="_blank">
+                                <li>Hyeyeong.Lee @kkotburi<a href="https://github.com/kkotburi" rel="noopener noreferrer" target="_blank" aria-label="kkotburi">
                                         <span class="icon-github"></span>
                                     </a>
                                 </li>
-                                <li>Yunbeen.Na @skdbsqls<a href="https://github.com/skdbsqls" target="_blank">
+                                <li>Yunbeen.Na @skdbsqls<a href="https://github.com/skdbsqls" rel="noopener noreferrer" target="_blank" aria-label="skdbsqls">
                                         <span class="icon-github"></span>
                                     </a>
                                 </li>
-                                <li>Seoyoung.Hong @ddoyongida<a href="https://github.com/ddoyongida" target="_blank">
+                                <li>Seoyoung.Hong @ddoyongida<a href="https://github.com/ddoyongida" rel="noopener noreferrer" target="_blank" aria-label="ddoyongida">
                                         <span class="icon-github"></span>
                                     </a>
                                 </li>
-                                <li>Hyungjung.Son @hyungjungson<a href="https://github.com/hyungjungson" target="_blank">
+                                <li>Hyungjung.Son @hyungjungson<a href="https://github.com/hyungjungson" rel="noopener noreferrer" target="_blank" aria-label="hyungjungson">
                                         <span class="icon-github"></span>
                                     </a>
                                 </li>
@@ -296,14 +296,7 @@
                 <!-- /.row -->
 
                 <div class="row mt-5">
-                    <div
-                        class="col-12 text-center">
-                        <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                **==========
-                                                                                                                                                                                                                                                                                                                                                                                                                                NOTE:
-                                                                                                                                                                                                                                                                                                                                                                                                                                Please don't remove this copyright link unless you buy the license here https://untree.co/license/
-                                                                                                                                                                                                                                                                                                                                                                                                                                **==========
-                                                                                                                                                                                                                                                                                                                                                                                                                                -->
+                    <div class="col-12 text-center">
                         <p>Copyright &copy;
                             <script>
                                 document.write(new Date().getFullYear());
@@ -329,9 +322,7 @@
         <script src="js/aos.js"></script>
         <script src="js/custom.js"></script>
         <!-- js: movie -->
-        <!--  <script type="module" src="js/main.js"></script>-->
         <script type="module" src="js/detail.js"></script>
-        <script type="module" src="js/modules/detail-review.js"></script>
     </body>
 
 </html>
