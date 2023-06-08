@@ -1,9 +1,13 @@
 export const detailInfo = () => {
+  // api key
   const key = "4e657bab9a1d4d7b73eb2631af49f6da";
   const movieDetailsElement = document.getElementById("movieDetails");
+
+  // url에서 쿼리 id 가져오기 : ?id=영화id
   const urlParams = new URLSearchParams(window.location.search);
   const movieId = urlParams.get("id");
 
+  // 영화 상세 정보 가져오기 : 기존 fetch에서 async로 변경
   async function fetchMovieDetails(movieId) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&append_to_response=credits`;
     const res = await fetch(url);
@@ -28,14 +32,17 @@ export const detailInfo = () => {
     setTimeout(displayDateTime, 1000);
   }
 
+  // 시간 오전, 오후 표시
   function getAmPm(hours) {
     return hours >= 12 ? "오후" : "오전";
   }
 
+  // 숫자 두 자리
   function padZero(number) {
     return number < 10 ? "0" + number : number;
   }
 
+  // 영화 상세 정보 화면에 보여주기
   function showMovieDetails(movieDetails) {
     // 감독 불러오기
     const directors = movieDetails.credits.crew.filter(
@@ -43,7 +50,7 @@ export const detailInfo = () => {
     );
     const directorNames = directors.map((director) => director.name).join(", ");
 
-    // 평점 소수점 첫째자리까지
+    // 평점 소수점 첫째 자리까지
     const voteAverage = movieDetails.vote_average.toFixed(1);
 
     const movieHTML = `
@@ -74,14 +81,16 @@ export const detailInfo = () => {
     movieDetailsElement.innerHTML += movieHTML;
   }
 
+  // 영화 상세 정보를 가져와서 화면에 보여주기
   fetchMovieDetails(movieId)
     .then(function (movieDetails) {
+      // 영화 상세 정보 보여주기
       showMovieDetails(movieDetails);
 
-      // 실시간 시간
+      // 실시간 시간 보여주기
       displayDateTime();
 
-      // 영화 목록 가져오기
+      // 인기 영화 목록 가져오기
       const url = "https://api.themoviedb.org/3/movie/popular?api_key=4e657bab9a1d4d7b73eb2631af49f6da";
       const movieList = document.getElementById("movie-list");
 
