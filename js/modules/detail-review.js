@@ -36,6 +36,31 @@ export const saveData = () => {
   localStorage.setItem("myData", jsonData);
 };
 
+// n개의 이야기
+const story = () => {
+  // 저장된 데이터 가져오기
+  let storedData = localStorage.getItem("myData");
+
+  // 저장된 데이터가 있는 경우
+  if (storedData !== null) {
+    let infoArray = JSON.parse(storedData);
+
+    // 필터링
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlMovieId = urlParams.get("id");
+
+    const filteredInfoArray = infoArray.filter(
+      (data) => data.movieId === urlMovieId
+    );
+
+    const detail = document.querySelector(".detail");
+    const h3 = document.createElement("h3");
+    h3.innerHTML = `🎬 영화에 대한 <b>${filteredInfoArray.length}개</b>의 이야기가 있어요!`;
+    detail.appendChild(h3);
+  }
+};
+story();
+
 // (2) localStarage에 적재된 데이터 가져와서 화면에 띄우기
 export const printData = () => {
   // 저장된 데이터 가져오기
@@ -95,9 +120,12 @@ export const printData = () => {
 
       const plus = document.createElement("div");
 
-      const edit = document.createElement("div");
-      edit.innerHTML = `<button class="edit-btn">수정</button>`;
-      plus.appendChild(edit);
+      const editBtn = document.createElement("div");
+      editBtn.innerHTML = `<button class="edit-btn">수정</button>`;
+      editBtn.addEventListener("click", function () {
+        editComment();
+      });
+      plus.appendChild(editBtn);
 
       const deleteBtn = document.createElement("div");
       deleteBtn.innerHTML = `<button class="delete-btn">삭제</button>`;
@@ -154,7 +182,6 @@ button.addEventListener("click", function (event) {
 printData();
 
 // (4) 리뷰 삭제
-
 const deleteComment = () => {
   // 비밀번호 입력 받기
   let password = prompt("비밀번호를 입력하세요");
@@ -172,13 +199,43 @@ const deleteComment = () => {
       (data) => data.commentId === commentId
     );
 
-    // 패스워드가 확인
+    // 비밀번호 확인
     if (filteredComment && filteredComment.password === password) {
       infoArray = infoArray.filter((data) => data.commentId !== commentId);
       let jsonData = JSON.stringify(infoArray);
       localStorage.setItem("myData", jsonData);
 
       printData();
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  }
+};
+
+// (4) 리뷰 수정
+const editComment = () => {
+  // 비밀번호 입력 받기
+  let password = prompt("비밀번호를 입력하세요");
+
+  // 저장된 데이터 가져오기
+  let storedData = localStorage.getItem("myData");
+
+  // 저장된 데이터가 있는 경우
+  if (storedData !== null) {
+    let infoArray = JSON.parse(storedData);
+
+    // commnetid와 localstorage의 id가 같은지 확인
+    const commentId = document.querySelector(".comment").id;
+    const filteredComment = infoArray.find(
+      (data) => data.commentId === commentId
+    );
+
+    // 비밀번호 확인
+    if (filteredComment && filteredComment.password === password) {
+      // 수정할 수 있는 모달창 띄우기
+      // 모달창 안에 있는 수정버튼을 누르면
+      // 로컬스토리지에 저장된 값을 모달창에서 입력 받은 값으로 바꿔주기
+      // 수정된 부분 포함 infoArray 다시 프린트..?
     } else {
       alert("비밀번호가 일치하지 않습니다.");
     }
