@@ -172,12 +172,15 @@ button.addEventListener("click", function (event) {
 
   saveData();
   printData();
+  story();
 
   document.getElementById("writer").value = "";
   document.getElementById("pwd").value = "";
   document.getElementById("average").value = "⭐️";
   document.getElementById("part").value = "배우";
   document.getElementById("comment").value = "";
+
+  window.location.reload();
 });
 printData();
 
