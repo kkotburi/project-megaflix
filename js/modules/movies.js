@@ -15,16 +15,14 @@ export const fetchMovie = (page) => {
         const div = document.createElement("div");
         div.classList.add("list");
         const output = `<div class="post-entry-alt">
-                                <div class="items">
-                                  <div class="img-link item">
-                                    <img src="${
-                                      base_url + movie.poster_path
-                                    }" class="img-fluid" alt="" style="width:100%">
-                                    <div class="caption">
-                                      <a href="./detail-view.html?id=${
-                                        movie.id
-                                      }">View details</a>
-                                    </div>
+                                <div class="img-link items">
+                                  <img src="${
+                                    base_url + movie.poster_path
+                                  }" class="img-fluid item" alt="" style="width:100%">
+                                  <div class="caption">
+                                    <a href="./detail-view.html?id=${
+                                      movie.id
+                                    }">View details</a>
                                   </div>
                                 </div>
                                 <div class="excerpt">
