@@ -36,7 +36,7 @@ export const saveData = () => {
   localStorage.setItem("myData", jsonData);
 };
 
-// n개의 이야기
+// (2) n개의 이야기
 const story = () => {
   // 저장된 데이터 가져오기
   let storedData = localStorage.getItem("myData");
@@ -61,7 +61,7 @@ const story = () => {
 };
 story();
 
-// (2) localStarage에 적재된 데이터 가져와서 화면에 띄우기
+// (3) localStarage에 적재된 데이터 가져와서 화면에 띄우기
 export const printData = () => {
   // 저장된 데이터 가져오기
   let storedData = localStorage.getItem("myData");
@@ -144,7 +144,7 @@ export const printData = () => {
 };
 printData();
 
-// (3) 관람평 등록 버튼을 누르면
+// (4) 관람평 등록 버튼을 누르면
 //     입력사항 검사 후 saveData() => printData() 함수 실행하기
 export const button = document.querySelector(".write_btn");
 button.addEventListener("click", function (event) {
@@ -183,7 +183,7 @@ button.addEventListener("click", function (event) {
 });
 printData();
 
-// (4) 리뷰 삭제
+// (5) 리뷰 삭제
 const deleteComment = () => {
   // 비밀번호 입력 받기
   let password = prompt("비밀번호를 입력하세요");
@@ -215,32 +215,82 @@ const deleteComment = () => {
   window.location.reload();
 };
 
-// // (4) 리뷰 수정
-// const editComment = () => {
-//   // 비밀번호 입력 받기
-//   let password = prompt("비밀번호를 입력하세요");
+// (6) 리뷰 수정
+const editComment = () => {
+  // 비밀번호 입력 받기
+  let password = prompt("비밀번호를 입력하세요");
 
-//   // 저장된 데이터 가져오기
-//   let storedData = localStorage.getItem("myData");
+  // 저장된 데이터 가져오기
+  let storedData = localStorage.getItem("myData");
 
-//   // 저장된 데이터가 있는 경우
-//   if (storedData !== null) {
-//     let infoArray = JSON.parse(storedData);
+  // 저장된 데이터가 있는 경우
+  if (storedData !== null) {
+    let infoArray = JSON.parse(storedData);
 
-//     // commnetid와 localstorage의 id가 같은지 확인
-//     const commentId = document.querySelector(".comment").id;
-//     const filteredComment = infoArray.find(
-//       (data) => data.commentId === commentId
-//     );
+    // commnetid와 localstorage의 id가 같은지 확인
+    const commentId = document.querySelector(".comment").id;
+    const filteredComment = infoArray.find(
+      (data) => data.commentId === commentId
+    );
 
-//     // 비밀번호 확인
-//     if (filteredComment && filteredComment.password === password) {
-//       // 수정할 수 있는 모달창 띄우기
-//       // 모달창 안에 있는 수정버튼을 누르면
-//       // 로컬스토리지에 저장된 값을 모달창에서 입력 받은 값으로 바꿔주기
-//       // 수정된 부분 포함 infoArray 다시 프린트..?
-//     } else {
-//       alert("비밀번호가 일치하지 않습니다.");
-//     }
-//   }
-// };
+    // 비밀번호 확인
+    if (filteredComment && filteredComment.password === password) {
+      // 수정할 수 있는 모달창 띄우기
+      const modal = document.querySelector(".modal-overlay");
+      modal.style.display = "flex";
+
+      // 모달창 안에 있는 수정 버튼 누르면 수정
+      const changeBtn = document.querySelector(".change_btn");
+      changeBtn.addEventListener("click", function () {
+        changeComment();
+      });
+
+      // 취소 버튼 누르면 모달창 꺼지기
+      const closeBtn = document.querySelector(".close_btn");
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  }
+};
+
+// localstorage에 저장된 값을 modal에서 입력 받은 값으로 바꿔주기
+const changeComment = () => {
+  // 저장된 데이터 가져오기
+  let storedData = localStorage.getItem("myData");
+
+  // 저장된 데이터가 있는 경우
+  if (storedData !== null) {
+    let infoArray = JSON.parse(storedData);
+
+    // 필터링
+    const commentId = document.querySelector(".comment").id;
+    const filteredComment = infoArray.find(
+      (data) => data.commentId === commentId
+    );
+
+    console.log(filteredComment);
+
+    // modal 입력값 가져오기
+    const modalwriter = document.getElementById("modal-writer").value;
+    const modalpassword = document.getElementById("modal-pwd").value;
+    const modalaverage = document.getElementById("modal-average").value;
+    const modalpart = document.getElementById("modal-part").value;
+    const modalcomment = document.getElementById("modal-comment").value;
+
+    //입력값 변경해주기
+    filteredComment.writer = modalwriter;
+    filteredComment.password = modalpassword;
+    filteredComment.average = modalaverage;
+    filteredComment.part = modalpart;
+    filteredComment.comment = modalcomment;
+
+    console.log(filteredComment);
+
+    // filteredComment의 값은 변경되기는 하는데
+    // localstorage에 저장된 값을 변경하는 걸 모르겠어요...
+  }
+};
+

@@ -89,9 +89,6 @@
   border: 2px solid #eeeeee;
   outline: none;
   font-size: 15px;
-  /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance : none; */
 }
 
 .comment-write .write {
@@ -474,4 +471,137 @@
   .comment-write .comment_select dl {
     width: 100%;
   }
+}
+
+/* 수정 모달창 */
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: none;
+}
+.modal-window .edit-input {
+  outline: solid;
+  outline-width: 3px;
+  outline-color: #0e0a20;
+  background-color: white;
+  width: 1000px;
+  height: 300px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.modal-window .info {
+  padding: 15px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-window .comment_select {
+  padding: 0px 15px 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-window .write {
+  padding: 15px;
+  align-items: center;
+}
+
+.modal-window .info input {
+  border: none;
+  background-color: #eeeeee;
+  padding: 5px;
+}
+
+.modal-window .info dl {
+  display: flex;
+  width: 50%;
+  vertical-align: middle;
+  margin: 0;
+  align-items: center;
+}
+
+.modal-window .info dt {
+  width: 150px;
+  padding: 15px 5px 15px 15px;
+  font-size: 15px;
+}
+.modal-window .info input {
+  width: 150px;
+  padding: 5px 15px 5px 15px;
+  outline: none;
+  font-size: 15px;
+}
+
+.modal-window .comment_select dl {
+  display: flex;
+  width: 50%;
+  vertical-align: middle;
+  margin: 0;
+  align-items: center;
+}
+
+.modal-window .average p,
+.modal-window .part p {
+  width: 150px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-window .comment_select dt {
+  width: 150px;
+  padding: 15px 5px 15px 15px;
+  font-size: 15px;
+}
+
+.modal-window .comment_select select {
+  width: 150px;
+  padding: 5px;
+  border: 2px solid #eeeeee;
+  outline: none;
+  font-size: 15px;
+}
+
+.modal-window .write {
+  display: flex;
+  vertical-align: middle;
+  margin: 0;
+  align-items: center;
+}
+.modal-window .close_btn,
+.modal-window .change_btn {
+  width: 60px;
+  height: 25px;
+  color: white;
+  font-size: 13px;
+  border: none;
+  background-color: #0e0a20;
+  float: right;
+  margin-right: 15px;
+}
+
+.modal-window .write textarea {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: #eeeeee;
+  font-size: 15px;
 }
