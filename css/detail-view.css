@@ -2,17 +2,20 @@
 
 /* 리뷰 작성 부분 css */
 .comment-write {
-  padding-top: 80px;
+  padding-top: 5px;
 }
-.comment-write > h3 {
+.detail > h3 {
+  padding-top: 100px;
   color: #0e0a20;
 }
 .comment-write > h3 > b {
   color: #4d4c7d;
 }
 .comment-write .comment_input {
-  border-top: 2px solid #0e0a20;
-  border-bottom: 2px solid #0e0a20;
+  border-top: 5px solid #0e0a20;
+  border-bottom: 5px solid #0e0a20;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .comment-write .info {
@@ -29,7 +32,6 @@
 
 .comment-write .write {
   padding: 15px;
-  border-bottom: 1px solid #0e0a20;
   align-items: center;
 }
 
@@ -171,7 +173,6 @@
   font-style: normal;
 }
 
-
 .detail .box-contents .spec {
   padding-top: 23px;
   font-size: 13px;
@@ -257,23 +258,22 @@
   color: #4d4c7d;
 }
 
-
 .detail .movie-video {
   position: relative;
   border-top: 5px solid #0e0a20;
 }
 
 .detail .movie-video .video {
-  position:relative;
-  width:100%;
-  height:0;
-  padding-bottom:56.25%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
-.detail .movie-video iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
+.detail .movie-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .detail .movie-video h4 {
@@ -474,5 +474,4 @@
   .comment-write .comment_select dl {
     width: 100%;
   }
-
 }
