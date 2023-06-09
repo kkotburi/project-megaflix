@@ -71,7 +71,7 @@
 .comment-write .part p {
   width: 150px;
   font-size: 15px;
-  font: bold;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -122,15 +122,18 @@
 /* 영화 상세 내용 css*/
 .detail .box {
   position: relative;
-  height: 510px;
+  max-width: 1366px;
+  width: 100%;
+  min-height: 510px;
+  height: auto;
 }
 
 .detail .box-img {
   position: absolute;
-  width: 300px;
+  max-width: 280px;
 }
 .detail .box-img .box-size {
-  width: 280px;
+  width: 100%;
   height: auto;
 }
 
@@ -138,7 +141,8 @@
   /* border: 1px solid black; */
   position: absolute;
   left: 305px;
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   text-align: left;
 }
 
@@ -170,8 +174,11 @@
 
 .detail .box-contents .spec {
   padding-top: 23px;
-  line-height: 0.3em;
   font-size: 13px;
+}
+
+.detail .box-contents .spec p {
+  margin-bottom: 0;
 }
 
 .detail .box-contents .spec .tit-spec {
@@ -181,6 +188,7 @@
 }
 
 .detail .box .box-contents .overview {
+  margin-top: 15px;
   height: auto;
 }
 
@@ -256,7 +264,16 @@
 }
 
 .detail .movie-video .video {
-  text-align: center;
+  position:relative;
+  width:100%;
+  height:0;
+  padding-bottom:56.25%;
+}
+
+.detail .movie-video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
 }
 
 .detail .movie-video h4 {
@@ -385,4 +402,77 @@
   background-color: #0e0a20;
   margin-left: 15px;
   margin-top: 10px;
+}
+
+/* responsive */
+@media (max-width: 1400px) {
+  .detail .box-contents {
+    width: 100%;
+    max-width: fit-content;
+  }
+  .detail-banner,
+  .detail .rest-videos {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .detail .box {
+    height: auto;
+  }
+
+  .detail .box-img {
+    position: static;
+    max-width: 100%;
+  }
+
+  .detail .box-contents {
+    padding: 10px 0;
+    width: 100%;
+    position: static;
+    max-width: fit-content;
+  }
+
+  .detail .box-contents strong {
+    font-size: 20px;
+  }
+
+  .detail .box-contents .vote-average {
+    padding: 0;
+  }
+
+  .detail .box-contents .vote-average p {
+    margin: 0 0 5px 0;
+  }
+
+  .detail .box-contents .spec {
+    padding-top: 5px;
+  }
+
+  .detail .box-contents .spec p {
+    margin-bottom: 0;
+  }
+
+  .detail .box .box-contents .overview {
+    margin: 5px 0;
+  }
+
+  .comment-list {
+    height: auto;
+  }
+
+  .comment-write {
+    padding-top: 40px;
+  }
+
+  .comment-write .info,
+  .comment-write .comment_select {
+    display: block;
+  }
+
+  .comment-write .info dl,
+  .comment-write .comment_select dl {
+    width: 100%;
+  }
+
 }
