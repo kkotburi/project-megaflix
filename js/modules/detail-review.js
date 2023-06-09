@@ -1,18 +1,17 @@
 // (1) 작성한 정보 JSON 형식으로 localStorage에 적재하기
 export const saveData = () => {
   // 입력값 변수 설정
+  const movieId = document.querySelector(".moviebox").id;
   const writer = document.getElementById("writer").value;
   const password = document.getElementById("pwd").value;
   const average = document.getElementById("average").value;
   const part = document.getElementById("part").value;
   const comment = document.getElementById("comment").value;
-  const movieId = document.querySelector(".moviebox").id;
-  console.log(typeof movieId, movieId);
 
   // 입력값 객체에 담기
   let uuid = self.crypto.randomUUID();
   let info = {
-    commnetId: uuid,
+    commentId: uuid,
     movieId: movieId,
     writer: writer,
     password: password,
@@ -62,7 +61,7 @@ export const printData = () => {
     filteredInfoArray.reverse().forEach((info) => {
       const li = document.createElement("li");
       li.setAttribute("class", "comment");
-      li.setAttribute("id", info.commnetId);
+      li.setAttribute("id", info.commentId);
 
       const user = document.createElement("div");
       user.setAttribute("class", "user");
@@ -102,6 +101,9 @@ export const printData = () => {
 
       const deleteBtn = document.createElement("div");
       deleteBtn.innerHTML = `<button class="delete-btn">삭제</button>`;
+      deleteBtn.addEventListener("click", function () {
+        deleteComment();
+      });
       plus.appendChild(deleteBtn);
 
       li.appendChild(user);
@@ -117,7 +119,6 @@ printData();
 // (3) 관람평 등록 버튼을 누르면
 //     입력사항 검사 후 saveData() => printData() 함수 실행하기
 export const button = document.querySelector(".write_btn");
-// export const registration =
 button.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -151,3 +152,35 @@ button.addEventListener("click", function (event) {
   document.getElementById("comment").value = "";
 });
 printData();
+
+// (4) 리뷰 삭제
+
+const deleteComment = () => {
+  // 비밀번호 입력 받기
+  let password = prompt("비밀번호를 입력하세요");
+
+  // 저장된 데이터 가져오기
+  let storedData = localStorage.getItem("myData");
+
+  // 저장된 데이터가 있는 경우
+  if (storedData !== null) {
+    let infoArray = JSON.parse(storedData);
+
+    // commnetid와 localstorage의 id가 같은지 확인
+    const commentId = document.querySelector(".comment").id;
+    const filteredComment = infoArray.find(
+      (data) => data.commentId === commentId
+    );
+
+    // 패스워드가 확인
+    if (filteredComment && filteredComment.password === password) {
+      infoArray = infoArray.filter((data) => data.commentId !== commentId);
+      let jsonData = JSON.stringify(infoArray);
+      localStorage.setItem("myData", jsonData);
+
+      printData();
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  }
+};
