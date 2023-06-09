@@ -172,13 +172,6 @@ button.addEventListener("click", function (event) {
 
   saveData();
   printData();
-  story();
-
-  document.getElementById("writer").value = "";
-  document.getElementById("pwd").value = "";
-  document.getElementById("average").value = "⭐️";
-  document.getElementById("part").value = "배우";
-  document.getElementById("comment").value = "";
 
   window.location.reload();
 });
@@ -213,34 +206,35 @@ const deleteComment = () => {
       alert("비밀번호가 일치하지 않습니다.");
     }
   }
+  window.location.reload();
 };
 
-// (4) 리뷰 수정
-const editComment = () => {
-  // 비밀번호 입력 받기
-  let password = prompt("비밀번호를 입력하세요");
+// // (4) 리뷰 수정
+// const editComment = () => {
+//   // 비밀번호 입력 받기
+//   let password = prompt("비밀번호를 입력하세요");
 
-  // 저장된 데이터 가져오기
-  let storedData = localStorage.getItem("myData");
+//   // 저장된 데이터 가져오기
+//   let storedData = localStorage.getItem("myData");
 
-  // 저장된 데이터가 있는 경우
-  if (storedData !== null) {
-    let infoArray = JSON.parse(storedData);
+//   // 저장된 데이터가 있는 경우
+//   if (storedData !== null) {
+//     let infoArray = JSON.parse(storedData);
 
-    // commnetid와 localstorage의 id가 같은지 확인
-    const commentId = document.querySelector(".comment").id;
-    const filteredComment = infoArray.find(
-      (data) => data.commentId === commentId
-    );
+//     // commnetid와 localstorage의 id가 같은지 확인
+//     const commentId = document.querySelector(".comment").id;
+//     const filteredComment = infoArray.find(
+//       (data) => data.commentId === commentId
+//     );
 
-    // 비밀번호 확인
-    if (filteredComment && filteredComment.password === password) {
-      // 수정할 수 있는 모달창 띄우기
-      // 모달창 안에 있는 수정버튼을 누르면
-      // 로컬스토리지에 저장된 값을 모달창에서 입력 받은 값으로 바꿔주기
-      // 수정된 부분 포함 infoArray 다시 프린트..?
-    } else {
-      alert("비밀번호가 일치하지 않습니다.");
-    }
-  }
-};
+//     // 비밀번호 확인
+//     if (filteredComment && filteredComment.password === password) {
+//       // 수정할 수 있는 모달창 띄우기
+//       // 모달창 안에 있는 수정버튼을 누르면
+//       // 로컬스토리지에 저장된 값을 모달창에서 입력 받은 값으로 바꿔주기
+//       // 수정된 부분 포함 infoArray 다시 프린트..?
+//     } else {
+//       alert("비밀번호가 일치하지 않습니다.");
+//     }
+//   }
+// };
