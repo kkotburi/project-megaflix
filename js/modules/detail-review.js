@@ -172,6 +172,13 @@ button.addEventListener("click", function (event) {
 
   saveData();
   printData();
+
+  document.getElementById("writer").value = "";
+  document.getElementById("pwd").value = "";
+  document.getElementById("average").value = "⭐️";
+  document.getElementById("part").value = "배우";
+  document.getElementById("comment").value = "";
+
   window.location.reload();
 });
 printData();
@@ -286,3 +293,4 @@ const changeComment = () => {
     // localstorage에 저장된 값을 변경하는 걸 모르겠어요...
   }
 };
+

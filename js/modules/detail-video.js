@@ -21,7 +21,6 @@ export const detailVideo = () => {
         if (res.results.length > 0) {
           // main Trailer 하나 가져오기, html에 보여지게 함
           let keyArr = res.results.filter((value) => value.type === "Trailer");
-          console.log(keyArr);
           const youtubeId = keyArr[0].key;
           output = `
                       <h4>Main trailer</h4>
