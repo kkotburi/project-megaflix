@@ -207,6 +207,8 @@ const deleteComment = () => {
       let jsonData = JSON.stringify(infoArray);
       localStorage.setItem("myData", jsonData);
 
+      console.log(filteredComment);
+
       printData();
     } else {
       alert("비밀번호가 일치하지 않습니다.");
@@ -232,6 +234,8 @@ const editComment = () => {
     const filteredComment = infoArray.find(
       (data) => data.commentId === commentId
     );
+
+    console.log(commentId);
 
     // 비밀번호 확인
     if (filteredComment && filteredComment.password === password) {
@@ -266,12 +270,10 @@ const changeComment = () => {
     let infoArray = JSON.parse(storedData);
 
     // 필터링
-    const commentId = document.querySelector(".comment").id;
+    const commentId = document.querySelectorAll(".comment").id;
     const filteredComment = infoArray.find(
       (data) => data.commentId === commentId
     );
-
-    console.log(filteredComment);
 
     // modal 입력값 가져오기
     const modalwriter = document.getElementById("modal-writer").value;
@@ -287,10 +289,17 @@ const changeComment = () => {
     filteredComment.part = modalpart;
     filteredComment.comment = modalcomment;
 
-    console.log(filteredComment);
+    // 삭제해야 될 코멘트의 인덱스 찾기
+    const findCommentIndex = infoArray.findIndex(
+      (data) => data.commentId === commentId
+    );
 
-    // filteredComment의 값은 변경되기는 하는데
-    // localstorage에 저장된 값을 변경하는 걸 모르겠어요...
+    // splice() 사용해서 해당 코멘트 삭제하고 filteredComment로 바꾸기
+    const updateInfoArray = infoArray.splice(
+      findCommentIndex,
+      1,
+      filteredComment
+    );
+    console.log(updateInfoArray);
   }
 };
-
