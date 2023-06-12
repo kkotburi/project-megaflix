@@ -11,8 +11,8 @@ export const saveData = () => {
   // 입력값 객체에 담기
   let uuid = self.crypto.randomUUID();
   let info = {
-    commentId: uuid,
     movieId: movieId,
+    buttonId: uuid,
     writer: writer,
     password: password,
     average: average,
@@ -86,7 +86,6 @@ export const printData = () => {
     filteredInfoArray.reverse().forEach((info) => {
       const li = document.createElement("li");
       li.setAttribute("class", "comment");
-      li.setAttribute("id", info.commentId);
 
       const user = document.createElement("div");
       user.setAttribute("class", "user");
@@ -119,19 +118,20 @@ export const printData = () => {
       commentBox.appendChild(commentTxt);
 
       const plus = document.createElement("div");
+      plus.setAttribute("class", "plus");
 
-      const editBtn = document.createElement("div");
-      editBtn.innerHTML = `<button class="edit-btn">수정</button>`;
-      editBtn.addEventListener("click", function () {
-        editComment();
-      });
+      const editBtn = document.createElement("button");
+      editBtn.setAttribute("class", "edit-btn");
+      editBtn.textContent = "수정";
+      editBtn.setAttribute("id", info.buttonId);
+      editBtn.addEventListener("click", (event) => editComment(event));
       plus.appendChild(editBtn);
 
-      const deleteBtn = document.createElement("div");
-      deleteBtn.innerHTML = `<button class="delete-btn">삭제</button>`;
-      deleteBtn.addEventListener("click", function () {
-        deleteComment();
-      });
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("class", "delete-btn");
+      deleteBtn.textContent = "삭제";
+      deleteBtn.setAttribute("id", info.buttonId);
+      deleteBtn.addEventListener("click", (event) => deleteComment(event));
       plus.appendChild(deleteBtn);
 
       li.appendChild(user);
@@ -184,7 +184,7 @@ button.addEventListener("click", function (event) {
 printData();
 
 // (5) 리뷰 삭제
-const deleteComment = () => {
+const deleteComment = (event) => {
   // 비밀번호 입력 받기
   let password = prompt("비밀번호를 입력하세요");
 
@@ -195,15 +195,15 @@ const deleteComment = () => {
   if (storedData !== null) {
     let infoArray = JSON.parse(storedData);
 
-    // commnetid와 localstorage의 id가 같은지 확인
-    const commentId = document.querySelector(".comment").id;
+    // buttonid와 localstorage의 buttonid가 같은지 확인
+    const buttonId = event.target.id;
     const filteredComment = infoArray.find(
-      (data) => data.commentId === commentId
+      (data) => data.buttonId === buttonId
     );
 
     // 비밀번호 확인
     if (filteredComment && filteredComment.password === password) {
-      infoArray = infoArray.filter((data) => data.commentId !== commentId);
+      infoArray = infoArray.filter((data) => data.buttonId !== buttonId);
       let jsonData = JSON.stringify(infoArray);
       localStorage.setItem("myData", jsonData);
 
@@ -216,7 +216,7 @@ const deleteComment = () => {
 };
 
 // (6) 리뷰 수정
-const editComment = () => {
+const editComment = (event) => {
   // 비밀번호 입력 받기
   let password = prompt("비밀번호를 입력하세요");
 
@@ -227,10 +227,10 @@ const editComment = () => {
   if (storedData !== null) {
     let infoArray = JSON.parse(storedData);
 
-    // commnetid와 localstorage의 id가 같은지 확인
-    const commentId = document.querySelector(".comment").id;
+    // buttonid와 localstorage의 buttonid가 같은지 확인
+    const buttonId = event.target.id;
     const filteredComment = infoArray.find(
-      (data) => data.commentId === commentId
+      (data) => data.buttonId === buttonId
     );
 
     // 비밀번호 확인
@@ -241,9 +241,7 @@ const editComment = () => {
 
       // 모달창 안에 있는 수정 버튼 누르면 수정
       const changeBtn = document.querySelector(".change_btn");
-      changeBtn.addEventListener("click", function () {
-        changeComment();
-      });
+      changeBtn.addEventListener("click", () => changeComment(buttonId));
 
       // 취소 버튼 누르면 모달창 꺼지기
       const closeBtn = document.querySelector(".close_btn");
@@ -257,7 +255,7 @@ const editComment = () => {
 };
 
 // localstorage에 저장된 값을 modal에서 입력 받은 값으로 바꿔주기
-const changeComment = () => {
+const changeComment = (buttonId) => {
   // 저장된 데이터 가져오기
   let storedData = localStorage.getItem("myData");
 
@@ -265,13 +263,10 @@ const changeComment = () => {
   if (storedData !== null) {
     let infoArray = JSON.parse(storedData);
 
-    // 필터링
-    const commentId = document.querySelector(".comment").id;
+    // buttonid와 localstorage의 buttonid가 같은지 확인
     const filteredComment = infoArray.find(
-      (data) => data.commentId === commentId
+      (data) => data.buttonId === buttonId
     );
-
-    console.log(filteredComment);
 
     // modal 입력값 가져오기
     const modalwriter = document.getElementById("modal-writer").value;
@@ -287,10 +282,13 @@ const changeComment = () => {
     filteredComment.part = modalpart;
     filteredComment.comment = modalcomment;
 
-    console.log(filteredComment);
+    // 삭제해야 될 코멘트의 인덱스 찾기
+    const findCommentIndex = infoArray.indexOf(filteredComment);
 
-    // filteredComment의 값은 변경되기는 하는데
-    // localstorage에 저장된 값을 변경하는 걸 모르겠어요...
+    // splice() 사용해서 해당 코멘트 삭제하고 filteredComment로 바꾸기
+    infoArray.splice(findCommentIndex, 1, filteredComment);
+    let jsonData = JSON.stringify(infoArray);
+    localStorage.setItem("myData", jsonData);
   }
+  window.location.reload();
 };
-
