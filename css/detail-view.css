@@ -379,7 +379,9 @@
 }
 
 /* 수정 삭제 버튼 추가 */
+
 .comment-list .edit-btn {
+  display: block;
   width: 60px;
   height: 25px;
   color: white;
@@ -391,6 +393,7 @@
 }
 
 .comment-list .delete-btn {
+  display: block;
   width: 60px;
   height: 25px;
   color: white;
