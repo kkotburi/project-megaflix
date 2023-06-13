@@ -165,9 +165,72 @@
         </div>
         <!-- 리뷰 리스트 부분 -->
         <ul class="comment-list"></ul>
+        <!-- 수정을 위한 모달창 -->
+        <div class="modal-overlay">
+          <div class="modal-window">
+            <div class="edit-input">
+              <div class="info">
+                <dl>
+                  <dt>작성자</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      id="modal-writer"
+                      placeholder="작성자 입력"
+                    />
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>비밀번호</dt>
+                  <dd>
+                    <input
+                      type="password"
+                      id="modal-pwd"
+                      placeholder="숫자 4자리"
+                    />
+                  </dd>
+                </dl>
+              </div>
+              <div class="comment_select">
+                <dl>
+                  <dt>평점</dt>
+                  <dd>
+                    <select name="average" id="modal-average" title="average">
+                      <option value="⭐️">⭐️</option>
+                      <option value="⭐️⭐️">⭐️⭐️</option>
+                      <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+                      <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+                      <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+                    </select>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>추천 부분</dt>
+                  <dd>
+                    <select name="part" id="modal-part" title="part">
+                      <option value="배우">배우</option>
+                      <option value="연출">연출</option>
+                      <option value="스토리">스토리</option>
+                      <option value="영상미">영상미</option>
+                    </select>
+                  </dd>
+                </dl>
+              </div>
+              <div class="write">
+                <textarea
+                  id="modal-comment"
+                  placeholder="영화 재미있게 보셨나요? 영화의 어떤 점이 좋았는지 이야기해주세요."
+                ></textarea>
+              </div>
+              <div>
+                <button class="close_btn">취소</button>
+                <button class="change_btn">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
     <div class="section bg-light">
       <div class="container">
         <div class="row mb-4">
