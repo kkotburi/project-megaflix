@@ -17,7 +17,7 @@
 ## 목차
 
 -   [1. 팀 과제 소개](#1-팀-과제-소개)
--   [2. 팀 과제 주소](#2-팀-과제-주소)
+-   [2. 서버 주소](#2-팀-과제-주소)
 -   [3. 기술스택](#3-기술스택)
 -   [4. 사용한 라이브러리](#4-사용한-라이브러리)
 -   [5. 사용한 API](#5-사용한-API)
@@ -36,11 +36,11 @@
 상세 페이지는 해당 영화의 다양한 정보를 확인할 수 있고 영화의 예고편을 볼 수 있습니다. 또한 해당 영화에 대한 리뷰를 작성할 수 있습니다.
 
 
-## 2. 팀 과제 주소
+## 2. 서버 주소
 
 https://github.com/hyungjungson/pj_team_vanilla_movie
 
-배포: https://pj-team-vanilla-movie.vercel.app
+서버: https://pj-team-vanilla-movie.vercel.app
 <div align=“center”>
 	  <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
   </div>
